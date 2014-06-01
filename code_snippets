@@ -1,0 +1,45 @@
+// My friends
+
+SELECT
+	PersonFriend.person
+FROM
+	Person
+JOIN
+	PersonFriend
+ON 
+	Person.person = PersonFriend.person
+WHERE
+	Person.person = 'Banner'
+
+// My friends of friends
+
+SELECT 
+	pf1.person as PERSON, pf3.person as FRIEND_OF_FRIEND
+FROM 
+	PersonFriend pf1
+INNER JOIN 
+	Person
+ON
+	pf1.person = PERSON.person
+INNER JOIN
+	PersonFriend pf2
+ON 
+	pf1.friend = pf2.person
+INNER JOIN 
+	PersonFriend pf3
+ON
+	pf2.friend = pf3.person
+WHERE
+	pf1.person = 'Banner' 
+AND
+	pf3.person <> 'Banner'
+
+// Schema
+Person
+------
+person
+
+PersonFriend
+------------
+person
+friend

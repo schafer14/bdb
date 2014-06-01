@@ -1,0 +1,35 @@
+CREATE 
+(Banner:Person { name:'Banner Schafer' }),
+(Joey:Person { name:'Joey Sudaka' }),
+(Reed:Person { name:'Reed Oxsen' }),
+(Sean:Person { name:'Sean MacIntyre' }),
+(Casey:Person { name:'Casey Schafer' }),
+(Colin:Person { name:'Colin MacIntyre' }),
+(Kim:Person { name:'Kim Oxsen' }),
+(Lenny:Person { name:'Lenny Sudaka' }),
+(Asher:Person { name:'Asher Nevins' }),
+
+(Corvallis:City { name:'Corvallis' }),
+(Perth:City { name:'Perth' }),
+(Palo:City { name:'Palo Alto' }),
+
+(Corvallis)<-[:LIVES_IN]-(Casey),
+(Corvallis)<-[:LIVES_IN]-(Joey),
+(Corvallis)<-[:LIVES_IN]-(Reed),
+(Corvallis)<-[:LIVES_IN]-(Kim),
+(Corvallis)<-[:LIVES_IN]-(Lenny),
+(Corvallis)<-[:LIVES_IN]-(Colin),
+(Perth)<-[:LIVES_IN]-(Banner),
+(Perth)<-[:LIVES_IN]-(Asher),
+(Palo)<-[:LIVES_IN]-(Sean),
+
+(Banner)<-[:FRIENDS]-(Joey),
+(Banner)<-[:FRIENDS]-(Reed),
+(Banner)<-[:FRIENDS]-(Sean),
+(Banner)<-[:FRIENDS]-(Asher),
+(Banner)<-[:HOUSE_MATE]-(Asher),
+(Joey)<-[:BROTHER]-(Lenny),
+(Sean)<-[:BROTHER]-(Colin),
+(Casey)<-[:BROTHER]-(Banner),
+(Reed)<-[:MOTHER]-(Kim)
+
